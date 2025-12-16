@@ -1,0 +1,172 @@
+/**
+ * Floating Elements CSS
+ * Lingkaran melayang interaktif di background halaman
+ */
+
+/* Container untuk floating elements */
+.floating-elements-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Floating circle element */
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(111,184,255,0.14) 0%, rgba(124,77,255,0.08) 100%);
+  pointer-events: auto;
+  border: 2px solid rgba(111,184,255,0.18);
+  box-shadow: 0 0 20px rgba(111,184,255,0.10);
+  animation: float-circle 6s ease-in-out infinite;
+  backdrop-filter: blur(1px);
+  cursor: pointer;
+  user-select: none;
+}
+
+.floating-circle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), transparent);
+  pointer-events: none;
+}
+
+/* Animation untuk floating circles */
+@keyframes float-circle {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50px) translateX(-20px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-30px) translateX(30px);
+    opacity: 0.7;
+  }
+}
+
+/* Variasi ukuran dan timing */
+.floating-circle.circle-1 {
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+.floating-circle.circle-2 {
+  width: 120px;
+  height: 120px;
+  animation-delay: 1s;
+  animation-duration: 10s;
+}
+
+.floating-circle.circle-3 {
+  width: 100px;
+  height: 100px;
+  animation-delay: 2s;
+  animation-duration: 9s;
+}
+
+.floating-circle.circle-4 {
+  width: 60px;
+  height: 60px;
+  animation-delay: 0.5s;
+  animation-duration: 7s;
+}
+
+.floating-circle.circle-5 {
+  width: 140px;
+  height: 140px;
+  animation-delay: 1.5s;
+  animation-duration: 11s;
+}
+
+.floating-circle.circle-6 {
+  width: 70px;
+  height: 70px;
+  animation-delay: 2.5s;
+  animation-duration: 8s;
+}
+
+/* Gradient variations */
+.floating-circle.gradient-primary {
+  background: linear-gradient(135deg, rgba(47,73,183,0.16) 0%, rgba(111,184,255,0.08) 100%);
+  border-color: rgba(47,73,183,0.18);
+  box-shadow: 0 0 20px rgba(47,73,183,0.08);
+}
+
+.floating-circle.gradient-secondary {
+  background: linear-gradient(135deg, rgba(111,184,255,0.16) 0%, rgba(124,77,255,0.08) 100%);
+  border-color: rgba(111,184,255,0.18);
+  box-shadow: 0 0 20px rgba(111,184,255,0.12);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .floating-circle {
+    opacity: 0.4 !important;
+  }
+
+  .floating-circle.circle-1 {
+    width: 50px;
+    height: 50px;
+  }
+
+  .floating-circle.circle-2 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .floating-circle.circle-3 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .floating-circle.circle-4 {
+    width: 40px;
+    height: 40px;
+  }
+
+  .floating-circle.circle-5 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .floating-circle.circle-6 {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Interaction effect on mouse move */
+.floating-circle.interactive {
+  transition: transform 0.1s ease-out;
+}
+
+/* Pulse effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(111,184,255,0.08);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(111,184,255,0.22);
+  }
+}
+
+.floating-circle.pulse {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
