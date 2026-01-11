@@ -1519,6 +1519,80 @@ blockquote {
   color: #ffffff !important;
 }
 
+/* Mobile scaling: reduce overall sizes on small devices without changing layout structure */
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+  :root { --h2-font-size: 34px; --h3-font-size: 24px; --p-font-size: 18px; --menu-font-size: 13px; }
+  .custom-btn { padding: 0.5rem 0.8rem; font-size: 0.95rem; }
+  .program-icon i { font-size: 30px !important; }
+  .custom-block { padding: 1rem; }
+}
+
+@media (max-width: 576px) {
+  /* further compact on very small devices */
+  html { font-size: 13px; }
+  :root { --h2-font-size: 30px; --h3-font-size: 20px; --p-font-size: 16px; --menu-font-size: 12px; }
+  .hero-section .container { padding-left: 1rem; padding-right: 1rem; }
+  .custom-block { padding: 0.85rem; }
+  .program-icon i { font-size: 28px !important; }
+
+  /* Program Unggulan: show two columns per row on small screens */
+  #programs .col-12.col-md-4 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* adjust spacing so last single item centers when odd count */
+  #programs .row { display: flex; flex-wrap: wrap; }
+  #programs .col-12.col-md-4:nth-last-child(1):first-child { margin-left: 25%; }
+}
+
+/* Normalize collapsed/mobile navbar so all pages match index appearance */
+@media (max-width: 991px) {
+  /* stronger override to remove the white rounded panel on collapsed navbars */
+  nav.navbar .navbar-collapse {
+    background: transparent !important;
+    padding: 0.25rem 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-top: 0 !important;
+  }
+
+  /* Make contact-nav render as a compact vertical pill list inside collapse */
+  .navbar .contact-nav {
+    display: block;
+    background: linear-gradient(90deg, rgba(111,184,255,0.95) 0%, rgba(95,150,255,0.95) 100%);
+    padding: 8px;
+    margin: 0.25rem 0 0 0;
+    border-radius: 12px;
+  }
+
+  /* ensure the pill container itself does not render a white background when collapsed */
+  nav.navbar .contact-nav {
+    background: linear-gradient(90deg, rgba(111,184,255,0.95) 0%, rgba(95,150,255,0.95) 100%) !important;
+    box-shadow: none !important;
+  }
+
+  .navbar .contact-nav .nav-link {
+    display: block;
+    width: auto;
+    margin: 6px 8px;
+    padding: 0.6rem 0.9rem !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+  }
+
+  .navbar .contact-nav .nav-link.active {
+    background: #ffffff !important;
+    color: var(--primary-color) !important;
+    box-shadow: 0 6px 16px rgba(17,24,39,0.12) !important;
+  }
+
+  /* remove outer large white rounded border if present */
+  .navbar .contact-nav + .navbar-toggler { margin-top: 0; }
+}
+
 /* Footer contact icons: use primary blue */
 .site-footer .bi {
   color: var(--primary-color) !important;
