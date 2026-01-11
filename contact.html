@@ -19,8 +19,15 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
         <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+        <style>
+            /* Contact page-specific navbar tweaks */
+            .contact-nav .nav-link { color: #ffffff !important; }
+            .contact-nav .nav-link.active { background: rgba(255,255,255,0.95) !important; color: var(--primary-color) !important; }
+            .contact-navbar .navbar-brand span { color: #000000 !important; }
+        </style>
 <!--
 
 TemplateMo 590 topic listing
@@ -30,32 +37,34 @@ https://templatemo.com/tm-590-topic-listing
 -->
     </head>
     
-    <body class="topics-listing-page" id="top">     
+    <body id="top">     
         <main>
-            <nav class="navbar">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
                 <div class="container d-flex align-items-center justify-content-between">
                     <a class="navbar-brand d-flex align-items-center me-3" href="index.html">
                         <img src="images/school_profile/logo-tkmelati.png" alt="TK Melati Purwakarta" style="height: 44px; margin-right: 10px;">
                         <span class="fw-semibold">TK Melati</span>
                     </a>
 
-                    <ul class="nav nav-pills nav-fill gap-2 p-1 small rounded-5 shadow-sm" id="pillNav2" role="tablist" style="background:var(--primary-color); --bs-nav-link-color: #ffffff; --bs-nav-pills-link-active-color: var(--primary-color); --bs-nav-pills-link-active-bg: #ffffff;">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link rounded-5" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link rounded-5" href="profil.html">Profile</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link rounded-5" href="programs.html">Program</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link rounded-5 active" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="nav nav-pills ms-auto gap-2 p-1 small rounded-5 shadow-sm" id="pillNav" role="tablist" style="background:transparent; --bs-nav-link-color: #13547a; --bs-nav-pills-link-active-color: var(--primary-color); --bs-nav-pills-link-active-bg: #ffffff;">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link rounded-5 active" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link rounded-5" href="profil.html">Profile</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link rounded-5" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
-
 
             <header class="site-header d-flex flex-column justify-content-center align-items-center">
                 <div class="container">
@@ -78,7 +87,7 @@ https://templatemo.com/tm-590-topic-listing
                             <p><strong>Alamat:</strong><br>FC4V+XMG, Gg. Melati III, Nagri Kaler, Kec. Purwakarta, Kabupaten Purwakarta, Jawa Barat 41115, Indonesia</p>
                             <div class="mt-3">
                                 <a href="mailto:tkmelati79@gmail.com" class="btn custom-btn me-2"><i class="bi bi-envelope"></i> Email</a>
-                                <a href="https://www.instagram.com/tkmelatipwk/" target="_blank" class="btn custom-btn custom-border-btn"><i class="bi bi-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/6287805356265" target="_blank" class="btn custom-btn custom-border-btn"><i class="bi bi-whatsapp"></i> WhatsApp</a>
                             </div>
                         </div>
 
@@ -118,10 +127,6 @@ https://templatemo.com/tm-590-topic-listing
                             </li>
 
                             <li class="site-footer-link-item">
-                                <a href="programs.html" class="site-footer-link">Program</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
                                 <a href="contact.html" class="site-footer-link">Kontak</a>
                             </li>
                         </ul>
@@ -130,15 +135,19 @@ https://templatemo.com/tm-590-topic-listing
                     <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
                         <h6 class="site-footer-title mb-3">Kontak</h6>
 
-                        <p class="text-white d-flex mb-1">
-                            <a href="mailto:tkmelati79@gmail.com" class="site-footer-link">
-                                tkmelati79@gmail.com
-                            </a>
+                        <p class="text-white d-flex mb-1 align-items-center">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:tkmelati79@gmail.com" class="site-footer-link">tkmelati79@gmail.com</a>
                         </p>
-                        <p class="text-white d-flex">
-                            <a href="https://www.instagram.com/tkmelatipwk/" target="_blank" class="site-footer-link">
-                                @tkmelatipwk (Instagram)
-                            </a>
+
+                        <p class="text-white d-flex mb-1 align-items-center">
+                            <i class="bi bi-whatsapp me-2"></i>
+                            <a href="https://wa.me/6287805356265" target="_blank" class="site-footer-link">087805356265</a>
+                        </p>
+
+                        <p class="text-white d-flex align-items-center">
+                            <i class="bi bi-instagram me-2"></i>
+                            <a href="https://www.instagram.com/tkmelatipwk/" target="_blank" class="site-footer-link">@tkmelatipwk</a>
                         </p>
                     </div>
 
@@ -149,32 +158,16 @@ https://templatemo.com/tm-590-topic-listing
                 </div>
             </div>
         </footer>
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container d-flex align-items-center justify-content-between">
-                        <a class="navbar-brand d-flex align-items-center me-3" href="index.html">
-                            <img src="images/school_profile/logo-tkmelati.png" alt="TK Melati Purwakarta" style="height: 44px; margin-right: 10px;">
-                            <span class="fw-semibold">TK Melati</span>
-                        </a>
+        
 
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/animations.js"></script>
 
-                        <div class="collapse navbar-collapse" id="mainNav">
-                            <ul class="nav nav-pills ms-auto gap-2 p-1 small rounded-5 shadow-sm" id="pillNav" role="tablist" style="background:var(--primary-color); --bs-nav-link-color: #ffffff; --bs-nav-pills-link-active-color: var(--primary-color); --bs-nav-pills-link-active-bg: #ffffff;">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link rounded-5" href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link rounded-5" href="profil.html">Profile</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link rounded-5" href="programs.html">Program</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link rounded-5 active" href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+    </body>
+</html>
+                       

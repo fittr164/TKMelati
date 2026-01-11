@@ -1080,7 +1080,7 @@ blockquote {
   TIMELINE              
 -----------------------------------------*/
 .timeline-section {
-  background-image: url('../images/colleagues-working-cozy-office-medium-shot.jpg');
+  background-image: url('../images//school_profile/pict-01.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1177,6 +1177,121 @@ blockquote {
 
 .timeline-container .vertical-scrollable-timeline li.active .icon-holder::before {
   background-color: var(--primary-color);
+}
+
+/* Horizontal gallery (draggable, auto-scroll, click-to-show description) */
+.horizontal-gallery {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 12px 6px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.horizontal-gallery::-webkit-scrollbar { height: 10px; }
+.horizontal-gallery::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 6px; }
+.hg-item {
+  min-width: 320px;
+  flex: 0 0 auto;
+  position: relative;
+  scroll-snap-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.6s ease;
+}
+.hg-item img { display:block; width:100%; height:220px; object-fit:cover; }
+.hg-item:hover { transform: translateY(-6px); }
+.hg-desc {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+.hg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease;
+}
+.hg-overlay.visible { opacity: 1; visibility: visible; }
+.hg-controls .btn { background: rgba(0,0,0,0.45); color: #fff; border: 1px solid rgba(255,255,255,0.08); }
+
+@media (min-width: 992px) {
+  .hg-item { min-width: 420px; height: 260px; }
+  .hg-item img { height:100%; }
+}
+
+/* Static gallery grid styles (pict-01..pict-17) */
+.gallery-grid { margin-left: -12px; margin-right: -12px; }
+.centered-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center; /* center the whole grid */
+  gap: 18px;
+}
+.centered-grid .gallery-item { display:flex; align-items:center; justify-content:center; }
+.centered-grid .gallery-item img { display:block; max-width:100%; height:auto; border-radius:8px; }
+/* ensure items align neatly in each cell */
+.centered-grid { justify-items: center; }
+
+@media (max-width: 767.98px) {
+  .centered-grid { grid-template-columns: repeat(1, auto); }
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .centered-grid { grid-template-columns: repeat(3, auto); }
+}
+@media (min-width: 1200px) {
+  .centered-grid { grid-template-columns: repeat(3, auto); }
+}
+
+/* Lightbox overlay for full-size images */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s ease;
+}
+.lightbox-overlay.visible { opacity: 1; visibility: visible; }
+.lightbox-overlay img {
+  max-width: 95%;
+  max-height: 92%;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+  border-radius: 6px;
+}
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 2300;
 }
 
 
@@ -1352,6 +1467,78 @@ blockquote {
   font-weight: var(--font-weight-medium);
   line-height: normal;
 }
+
+/* Unified navbar appearance across pages
+   - Default (at top): subtle white -> light-blue gradient, brand text dark
+   - Scrolled: blue -> purple gradient, brand text white
+   - Menu tabs stay blue with white text (pill style)
+*/
+.navbar {
+  background: linear-gradient(90deg, #ffffff 0%, rgba(111,184,255,0.15) 100%);
+  transition: background 0.28s ease, box-shadow 0.28s ease;
+}
+.navbar .navbar-brand span {
+  color: #111827; /* dark text at top */
+  transition: color 0.28s ease;
+}
+/* Leave nav-pills to Bootstrap/default template styles so tab menu looks original */
+
+/* Scrolled state */
+.navbar.navbar-scrolled {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+  box-shadow: 0 8px 22px rgba(17,24,39,0.12);
+}
+.navbar.navbar-scrolled .navbar-brand span {
+  color: #ffffff !important;
+}
+.navbar.navbar-scrolled .nav-link {
+  /* keep default behavior (no forced pill background) */
+}
+.navbar-toggler-icon { filter: none; }
+.navbar.navbar-scrolled .navbar-toggler-icon { filter: invert(1) brightness(2); }
+
+/* Page-specific pill bar for Profile & Contact nav (matches design in attachment) */
+.contact-nav {
+  background: linear-gradient(90deg, rgba(111,184,255,0.95) 0%, rgba(95,150,255,0.95) 100%);
+  padding: 6px;
+  border-radius: 999px;
+}
+.contact-nav .nav-link {
+  color: #ffffff !important;
+  background: transparent !important;
+  border-radius: 999px !important;
+  padding: 0.45rem 0.9rem !important;
+  transition: all 0.18s ease;
+}
+.contact-nav .nav-link.active {
+  background: #ffffff !important;
+  color: var(--primary-color) !important;
+  box-shadow: 0 6px 16px rgba(17,24,39,0.12) !important;
+}
+.contact-nav .nav-link:focus, .contact-nav .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Footer contact icons: use primary blue */
+.site-footer .bi {
+  color: var(--primary-color) !important;
+}
+
+/* Disable floating elements and logo animation */
+.floating-elements-container,
+.floating-circle {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.navbar-brand img,
+.site-footer .navbar-brand img {
+  -webkit-animation: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
 
 .copyright-text {
   font-size: var(--copyright-font-size);

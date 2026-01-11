@@ -11,8 +11,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
         <link href="css/templatemo-topic-listing.css" rel="stylesheet">
-            <link href="css/floating-elements.css" rel="stylesheet">
             <style>
                 /* Tab background overlay and transition */
                 .tab-pane {
@@ -24,7 +24,7 @@
         </head>
         <body>
             <main>
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand-lg navbar-light bg-white contact-navbar">
                 <div class="container d-flex align-items-center justify-content-between">
                     <a class="navbar-brand d-flex align-items-center me-3" href="index.html">
                         <img src="images/school_profile/logo-tkmelati.png" alt="TK Melati Purwakarta" style="height: 44px; margin-right: 10px;">
@@ -36,15 +36,12 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="mainNav">
-                        <ul class="nav nav-pills ms-auto gap-2 p-1 small rounded-5 shadow-sm" id="pillNav" role="tablist" style="background:var(--primary-color); --bs-nav-link-color: #ffffff; --bs-nav-pills-link-active-color: var(--primary-color); --bs-nav-pills-link-active-bg: #ffffff;">
+                        <ul class="nav nav-pills ms-auto gap-2 p-1 small rounded-5 shadow-sm contact-nav" id="pillNav" role="tablist" style="background:transparent; --bs-nav-pills-link-active-color: var(--primary-color); --bs-nav-pills-link-active-bg: #ffffff;">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link rounded-5" href="index.html">Home</a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link rounded-5 active" href="profil.html">Profile</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link rounded-5" href="programs.html">Program</a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link rounded-5" href="contact.html">Contact</a>
@@ -94,13 +91,13 @@
                                             <p class="mb-1"><strong>Nama Sekolah :</strong> TK Melati</p>
                                             <p class="mb-1"><strong>Bentuk Pendidikan :</strong> Taman Kanak-Kanak (TK)</p>
                                             <p class="mb-1"><strong>Status Sekolah :</strong> Swasta</p>
-                                            <p class="mb-1"><strong>Status Kepemilikan :</strong> Yayasan Muhammadiyah</p>
+                                            <p class="mb-1"><strong>Status Kepemilikan :</strong>Muhammadiyah</p>
                                             <p class="mb-1"><strong>NPSN :</strong> 20264941</p>
                                             <hr>
                                             <p class="mb-1"><strong>Alamat :</strong> Gang Melati RT 57 RW 06, Kelurahan Nagrikaler, Kabupaten Purwakarta, Jawa Barat</p>
                                             <p class="mb-1"><strong>Kode Pos :</strong> 41115</p>
                                             <p class="mb-1"><strong>Email :</strong> <a href="mailto:tkmelati79@gmail.com">tkmelati79@gmail.com</a></p>
-                                            <p class="mb-0"><strong>Instagram :</strong> <a href="https://www.instagram.com/tkmelatipwk/" target="_blank">@tkmelatipwk</a></p>
+                                            <p class="mb-0"><strong>WhatsApp :</strong> <a href="https://wa.me/6287805356265" target="_blank">087805356265</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +112,7 @@
                                             <p><strong>Surat Keputusan Kepala Sekolah</strong><br>Nomor: 010/TK-M/V/2025</p>
                                             <hr>
                                             <h6>Pimpinan Sekolah</h6>
-                                            <p class="mb-1"><strong>Kepala Yayasan :</strong> Yayasan Muhammadiyah</p>
+                                            <p class="mb-1"><strong>Kepala Yayasan :</strong>Muhammadiyah</p>
                                             <p class="mb-1"><strong>Kepala Sekolah :</strong> Firda Sarifadilah, S.Pd</p>
                                         </div>
                                     </div>
@@ -253,11 +250,10 @@
             <section class="section-padding">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 mb-5" style="background: url('images/school_profile/pict-08.jpg') center/cover no-repeat; padding: 40px; border-radius: 8px; background-size:cover;">
-                            <div class="card shadow-sm" style="background: transparent; box-shadow: none;">
-                                <div class="card-body text-dark" style="background: rgba(255,255,255,0.30);">
-                                    <h3 class="text-dark">PENUTUP</h3>
-                                    <p>Dengan dukungan tenaga pendidik yang profesional, lingkungan belajar yang aman, serta nilai-nilai keislaman dan kemuhammadiyahan, TK Melati berkomitmen menjadi tempat tumbuh kembang anak yang menyenangkan dan bermakna sebagai fondasi menuju masa depan yang lebih baik.</p>
+                        <div class="col-12">
+                            <div class="card shadow-sm mx-auto" style="max-width:900px; background: rgba(255,255,255,0.30);">
+                                <div class="card-body text-dark text-center">
+                                    <p class="mb-0">Dengan dukungan tenaga pendidik yang profesional, lingkungan belajar yang aman, serta nilai-nilai keislaman dan kemuhammadiyahan, TK Melati berkomitmen menjadi tempat tumbuh kembang anak yang menyenangkan dan bermakna sebagai fondasi menuju masa depan yang lebih baik.</p>
                                 </div>
                             </div>
                         </div>
@@ -279,22 +275,25 @@
                         <h6 class="site-footer-title mb-3">Halaman</h6>
                         <ul class="site-footer-links">
                             <li class="site-footer-link-item"><a href="index.html" class="site-footer-link">Beranda</a></li>
-                            <li class="site-footer-link-item"><a href="programs.html" class="site-footer-link">Program</a></li>
                             <li class="site-footer-link-item"><a href="contact.html" class="site-footer-link">Kontak</a></li>
                         </ul>
                     </div>
                      <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
                         <h6 class="site-footer-title mb-3">Kontak</h6>
 
-                        <p class="text-white d-flex mb-1">
-                            <a href="mailto:tkmelati79@gmail.com" class="site-footer-link">
-                                tkmelati79@gmail.com
-                            </a>
+                        <p class="text-white d-flex mb-1 align-items-center">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:tkmelati79@gmail.com" class="site-footer-link">tkmelati79@gmail.com</a>
                         </p>
-                        <p class="text-white d-flex">
-                            <a href="https://www.instagram.com/tkmelatipwk/" target="_blank" class="site-footer-link">
-                                @tkmelatipwk (Instagram)
-                            </a>
+
+                        <p class="text-white d-flex align-items-center">
+                            <i class="bi bi-whatsapp me-2"></i>
+                            <a href="https://wa.me/6287805356265" target="_blank" class="site-footer-link">087805356265</a>
+                        </p>
+
+                        <p class="text-white d-flex align-items-center">
+                            <i class="bi bi-instagram me-2"></i>
+                            <a href="https://www.instagram.com/tkmelatipwk/" target="_blank" class="site-footer-link">@tkmelatipwk</a>
                         </p>
                     </div>
                 </div>
@@ -306,7 +305,6 @@
         <script src="js/jquery.sticky.js"></script>
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
-        <script src="js/floating-circles.js"></script>
         <script src="js/animations.js"></script>
     </body>
 </html>
